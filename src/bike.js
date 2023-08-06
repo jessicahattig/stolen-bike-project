@@ -1,3 +1,5 @@
 export default class Bike{
-  constructor()
+  constructor(){
+
+  }
 }
