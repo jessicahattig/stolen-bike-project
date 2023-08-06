@@ -6,9 +6,9 @@ describe("Bike",()=>{
     expect(bike).toEqual({})
   });
 
-  test('Should search for bike when location is inputted', () => {
-    const bike = new Bike();
-    Bike.getStolen("Portland");
-    expect(bike.bikes.length).toEqual(25);
+  test('Should search for bike when location is inputted', async () => {
+   
+    const response = await Bike.getStolen("Portland");
+    expect(response.bikes.length).toEqual(25);
   })
 })
