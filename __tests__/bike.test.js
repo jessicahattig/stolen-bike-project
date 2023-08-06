@@ -7,8 +7,8 @@ describe("Bike",()=>{
   });
 
   test('Should search for bike when location is inputted', () => {
-    const bike = new Bike(Portland);
-    const mySearch = bike.getStolen();
-    expect(mySearch).toEqual(Portland);
+    const bike = new Bike();
+    Bike.getStolen("Portland");
+    expect(bike.bikes.length).toEqual(25);
   })
 })
