@@ -1,5 +1,8 @@
-import {Bike} from "../src/stolen.js";
+import { Bike } from "../src/bike.js";
 
 describe("Bike",()=>{
-  test ("Should create a Stolen class with a value", ()=> )
+  test ("Should create a Bike class", ()=> {
+    const bike = new Bike();
+    expect(bike).toEqual({})
+  })
 })
