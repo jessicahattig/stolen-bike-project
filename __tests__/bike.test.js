@@ -7,7 +7,6 @@ describe("Bike",()=>{
   });
 
   test('Should search for bike when location is inputted', async () => {
-   
     const response = await Bike.getStolen("Portland");
     expect(response.bikes.length).toEqual(25);
   })
