@@ -7,7 +7,7 @@ import Bike from './bike.js';
 
 async function getStolen(location) {
   const response = await Bike.getStolen(location);
-  if (response.main) {
+  if (response.bikes) {
     printElements(response, location);
   } else {
     printError(response, location);
@@ -17,7 +17,7 @@ async function getStolen(location) {
 // UI Logic
 
 function printElements(response, location) {
-  document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location} is ${response.bikes.length}%.`;
+  document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location} is ${response.bikes}%.`;
 }
 
 function printError(error, location) {
