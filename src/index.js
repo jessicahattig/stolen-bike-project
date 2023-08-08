@@ -1,12 +1,13 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import Bike from './bike.js';
+import Bike from './Bike.js';
 
 // Business Logic
 
 async function getStolen(location) {
   const response = await Bike.getStolen(location);
+  console.log(response);
   if (response.bikes) {
     printElements(response, location);
   } else {
@@ -17,7 +18,7 @@ async function getStolen(location) {
 // UI Logic
 
 function printElements(response, location) {
-  document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location} is ${response.bikes}%.`;
+  document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location}%.`;
 }
 
 function printError(error, location) {
