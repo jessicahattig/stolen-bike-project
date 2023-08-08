@@ -18,7 +18,12 @@ async function getStolen(location) {
 // UI Logic
 
 function printElements(response, location) {
-  document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location}%.`;
+  document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location}:`
+  const bikeList = response.bikes.map((data) => {
+    const bikeInfo = data["manufacturer_name"] + data["frame_model"]; 
+    return bikeInfo
+});
+  document.getElementById("bike-list").innerHTML = bikeList
 }
 
 function printError(error, location) {
