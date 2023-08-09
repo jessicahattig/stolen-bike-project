@@ -20,9 +20,10 @@ async function getStolen(location) {
 function printElements(response, location) {
   document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location}:`
   const bikeList = response.bikes.map((data) => {
-    const bikeInfo = data["manufacturer_name"] + ", " + data["frame_model"];
+    const bikeInfo = data["manufacturer_name"] + ", " + data["frame_model"] 
+    const bikeUrl = data["url"];
     const bikeImg = data["thumb"];
-    return `<li>${bikeInfo}</li> <img src="${bikeImg}" alt="Missing bike">`
+    return `<li><img src="${bikeImg}" alt="Missing bike"> <a href="${bikeUrl}">${bikeInfo}</a></li>`
   });
   document.getElementById("bike-list").innerHTML = bikeList
 }
