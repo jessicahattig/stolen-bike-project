@@ -21,7 +21,8 @@ function printElements(response, location) {
   document.querySelector('#showResponse').innerText = `Here are the stolen bikes in ${location}:`
   const bikeList = response.bikes.map((data) => {
     const bikeInfo = data["manufacturer_name"] + ", " + data["frame_model"];
-    return `<li>${bikeInfo}</li>`
+    const bikeImg = data["thumb"];
+    return `<li>${bikeInfo}</li> <img src="${bikeImg}" alt="Missing bike">`
   });
   document.getElementById("bike-list").innerHTML = bikeList
 }
